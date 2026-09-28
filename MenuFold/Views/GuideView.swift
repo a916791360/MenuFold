@@ -150,6 +150,23 @@ public struct GuideView: View {
                             .foregroundColor(.secondary)
                     }
                 }
+                
+                // Notch Help Notice
+                VStack(alignment: .leading, spacing: 6) {
+                    HStack(spacing: 6) {
+                        Image(systemName: "exclamationmark.triangle.fill")
+                            .foregroundColor(.orange)
+                        Text(NSLocalizedString("Notch Overflow Tip", comment: "Tip title"))
+                            .font(.subheadline)
+                            .fontWeight(.bold)
+                    }
+                    Text(NSLocalizedString("If you don't see the arrow upon launching, it is because your menu bar is already completely full to the notch, placing new icons behind the notch hardware. Simply quit 1-2 unused menu bar apps to let the arrow reveal itself, then ⌘-drag it to the right side of your menu bar!", comment: "Notch tip body"))
+                        .font(.footnote)
+                        .foregroundColor(.secondary)
+                }
+                .padding(12)
+                .background(Color.orange.opacity(0.1))
+                .cornerRadius(10)
             }
             .padding(24)
         }

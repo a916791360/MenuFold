@@ -70,6 +70,8 @@
 "Pro Tips: Shortcuts & Clean Mode" = "进阶技巧：快捷键与极简模式";
 "• Press ⌘ + ⌥ + B anywhere to toggle fold state.\n• Option-click the arrow to hide/show the separator line.\n• Enable 'Auto Collapse' in Preferences to fold automatically." = "• 任意界面按下 ⌘ + ⌥ + B 快速切换展开/折叠。\n• 按住 Option 键点击箭头可直接隐藏/显示分隔线。\n• 在偏好设置开启“自动折叠”，展开使用完毕后自动隐退。";
 "Got it! Start using MenuFold" = "知道了，开始使用 MenuFold";
+"Notch Overflow Tip" = "💡 初次启动看不到箭头？";
+"If you don't see the arrow upon launching, it is because your menu bar is already completely full to the notch, placing new icons behind the notch hardware. Simply quit 1-2 unused menu bar apps to let the arrow reveal itself, then ⌘-drag it to the right side of your menu bar!" = "如果你的菜单栏图标目前已经非常多并紧贴刘海，macOS 会把新应用默认排在最左侧（暂时落在刘海硬件遮挡区内）。只需先临时退出 1~2 个不常用的菜单栏软件（腾出约 1~2 厘米宽度），折叠箭头就会立刻从刘海右侧露出！此时按住 ⌘ 键将箭头往右拖拽到常驻区域，即可永久解决！";
 
 /* About */
 "Version %@" = "版本 %@";
