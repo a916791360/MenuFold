@@ -1,0 +1,80 @@
+/* Menu items */
+"Expand Menu Bar" = "Expand Menu Bar";
+"Collapse Menu Bar" = "Collapse Menu Bar";
+"Auto Collapse" = "Auto Collapse";
+"Separator Style" = "Separator Style";
+"Show Separator Line" = "Show Separator Line";
+"Hide Separator Line" = "Hide Separator Line";
+"How to Use (⌘ + Drag)..." = "How to Use (⌘ + Drag)...";
+"Preferences..." = "Preferences...";
+"Quit MenuFold" = "Quit MenuFold";
+"MenuFold: Click to toggle, Option-click to toggle separator" = "MenuFold: Click to toggle, Option-click to toggle separator";
+"MenuFold Separator: Cmd-drag items to the left to fold" = "MenuFold Separator: Cmd-drag items to the left to fold";
+
+/* Preferences & Settings */
+"MenuFold Preferences" = "MenuFold Preferences";
+"General" = "General";
+"Appearance" = "Appearance";
+"Guide" = "Guide";
+"About" = "About";
+
+/* Startup & Behavior */
+"Startup" = "Startup";
+"Launch at Login" = "Launch at Login";
+"Automatically start MenuFold when your Mac starts" = "Automatically start MenuFold when your Mac starts";
+"Behavior" = "Behavior";
+"Auto Collapse Timer" = "Auto Collapse Timer";
+"After expanding, MenuFold will automatically fold after the specified time." = "After expanding, MenuFold will automatically fold after the specified time.";
+"Shortcuts" = "Shortcuts";
+"Enable Global Shortcut (⌘ + ⌥ + B)" = "Enable Global Shortcut (⌘ + ⌥ + B)";
+"Toggle menu bar fold/expand from anywhere with keyboard" = "Toggle menu bar fold/expand from anywhere with keyboard";
+"Advanced" = "Advanced";
+"Enable Always-Hidden Section" = "Enable Always-Hidden Section";
+"Adds a second separator for icons you never want to see" = "Adds a second separator for icons you never want to see";
+
+/* Appearance */
+"Toggle Arrow" = "Toggle Arrow";
+"Arrow Icon Style" = "Arrow Icon Style";
+"Preview:" = "Preview:";
+"Expanded" = "Expanded";
+"Folded" = "Folded";
+"Separator Boundary" = "Separator Boundary";
+"Hides the separator bar for an ultra-clean look (Option-click arrow to toggle)" = "Hides the separator bar for an ultra-clean look (Option-click arrow to toggle)";
+
+/* Styles */
+"Classic Chevron" = "Classic Chevron (< / >)";
+"Filled Triangle" = "Filled Triangle (◀ / ▶)";
+"Circle Chevron" = "Circle Chevron";
+"Subtle Line (|)" = "Subtle Line (|)";
+"Subtle Dot (•)" = "Subtle Dot (•)";
+"Completely Hidden" = "Completely Hidden";
+
+/* Duration */
+"Never (Manual Only)" = "Never (Manual Only)";
+"5 Seconds" = "5 Seconds";
+"10 Seconds" = "10 Seconds";
+"15 Seconds" = "15 Seconds";
+"30 Seconds" = "30 Seconds";
+
+/* Guide */
+"Welcome to MenuFold" = "Welcome to MenuFold";
+"Solve MacBook notch occlusion & organize your menu bar" = "Solve MacBook notch occlusion & organize your menu bar";
+"Layout in Menu Bar" = "Layout in Menu Bar";
+"Folded / Hidden Area" = "Folded / Hidden Area (Left)";
+"Separator" = "Separator";
+"Always Visible Area" = "Always Visible Area (Right)";
+"Hold ⌘ (Command) to Drag Icons" = "Step 1: Hold ⌘ to Drag Icons";
+"Hold the ⌘ (Command) key on your keyboard and drag any menu bar icon with your mouse. Drag icons you want to collapse to the LEFT of the separator." = "Hold the ⌘ (Command) key on your keyboard and drag any menu bar icon with your mouse. Drag icons you want to collapse to the LEFT of the separator.";
+"Click the Arrow to Fold / Unfold" = "Step 2: Click the Arrow to Fold";
+"Click the arrow (< / >) on the menu bar. All icons to the left will instantly fold and hide, freeing up menu bar space and avoiding notch occlusion!" = "Click the arrow (< / >) on the menu bar. All icons to the left will instantly fold and hide, freeing up menu bar space and avoiding notch occlusion!";
+"Pro Tips: Shortcuts & Clean Mode" = "Pro Tips: Shortcuts & Clean Mode";
+"• Press ⌘ + ⌥ + B anywhere to toggle fold state.\n• Option-click the arrow to hide/show the separator line.\n• Enable 'Auto Collapse' in Preferences to fold automatically." = "• Press ⌘ + ⌥ + B anywhere to toggle fold state.\n• Option-click the arrow to hide/show the separator line.\n• Enable 'Auto Collapse' in Preferences to fold automatically.";
+"Got it! Start using MenuFold" = "Got it! Start using MenuFold";
+
+/* About */
+"Version %@" = "Version %@";
+"Ultra-light macOS Menu Bar Organizer for Notch Displays" = "Ultra-light macOS Menu Bar Organizer for Notch Displays";
+"Designed & Developed by" = "Designed & Developed by";
+"GitHub Repository" = "GitHub Repository";
+"Releases & Updates" = "Releases & Updates";
+"Open source under the MIT License" = "Open source under the MIT License";

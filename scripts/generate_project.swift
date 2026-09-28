@@ -1,0 +1,445 @@
+import Foundation
+
+let pbxproj = """
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		MF0001 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = MF1001 /* AppDelegate.swift */; };
+		MF0002 /* StatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = MF1002 /* StatusBarController.swift */; };
+		MF0003 /* HotKeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = MF1003 /* HotKeyManager.swift */; };
+		MF0004 /* LaunchAtLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = MF1004 /* LaunchAtLoginManager.swift */; };
+		MF0005 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = MF1005 /* Preferences.swift */; };
+		MF0006 /* AppearanceTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = MF1006 /* AppearanceTypes.swift */; };
+		MF0007 /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = MF1007 /* PreferencesWindowController.swift */; };
+		MF0008 /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = MF1008 /* PreferencesView.swift */; };
+		MF0009 /* GeneralSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = MF1009 /* GeneralSettingsView.swift */; };
+		MF0010 /* AppearanceSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = MF1010 /* AppearanceSettingsView.swift */; };
+		MF0011 /* GuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = MF1011 /* GuideView.swift */; };
+		MF0012 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = MF1012 /* AboutView.swift */; };
+		MF0013 /* OnboardingWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = MF1013 /* OnboardingWindowController.swift */; };
+		MF0014 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = MF1014 /* Assets.xcassets */; };
+		MF0015 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = MF1015 /* Localizable.strings */; };
+		MF0016 /* AppIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = MF1016 /* AppIcon.icns */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		MF1000 /* MenuFold.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MenuFold.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		MF1001 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		MF1002 /* StatusBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarController.swift; sourceTree = "<group>"; };
+		MF1003 /* HotKeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotKeyManager.swift; sourceTree = "<group>"; };
+		MF1004 /* LaunchAtLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAtLoginManager.swift; sourceTree = "<group>"; };
+		MF1005 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		MF1006 /* AppearanceTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceTypes.swift; sourceTree = "<group>"; };
+		MF1007 /* PreferencesWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
+		MF1008 /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
+		MF1009 /* GeneralSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingsView.swift; sourceTree = "<group>"; };
+		MF1010 /* AppearanceSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceSettingsView.swift; sourceTree = "<group>"; };
+		MF1011 /* GuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideView.swift; sourceTree = "<group>"; };
+		MF1012 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		MF1013 /* OnboardingWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWindowController.swift; sourceTree = "<group>"; };
+		MF1014 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		MF1016 /* AppIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = AppIcon.icns; sourceTree = "<group>"; };
+		MF1017 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		MF1018 /* MenuFold.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MenuFold.entitlements; sourceTree = "<group>"; };
+		MF1019 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		MF1020 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "en.lproj/Localizable.strings"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		MF2001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		MF3000 = {
+			isa = PBXGroup;
+			children = (
+				MF3001 /* MenuFold */,
+				MF3008 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		MF3001 /* MenuFold */ = {
+			isa = PBXGroup;
+			children = (
+				MF3002 /* App */,
+				MF3003 /* Core */,
+				MF3004 /* Models */,
+				MF3005 /* Views */,
+				MF3006 /* Resources */,
+				MF3007 /* Support */,
+			);
+			path = MenuFold;
+			sourceTree = "<group>";
+		};
+		MF3002 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				MF1001 /* AppDelegate.swift */,
+				MF1017 /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		MF3003 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				MF1002 /* StatusBarController.swift */,
+				MF1003 /* HotKeyManager.swift */,
+				MF1004 /* LaunchAtLoginManager.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		MF3004 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				MF1005 /* Preferences.swift */,
+				MF1006 /* AppearanceTypes.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		MF3005 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				MF1007 /* PreferencesWindowController.swift */,
+				MF1008 /* PreferencesView.swift */,
+				MF1009 /* GeneralSettingsView.swift */,
+				MF1010 /* AppearanceSettingsView.swift */,
+				MF1011 /* GuideView.swift */,
+				MF1012 /* AboutView.swift */,
+				MF1013 /* OnboardingWindowController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		MF3006 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				MF1014 /* Assets.xcassets */,
+				MF1016 /* AppIcon.icns */,
+				MF1015 /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		MF3007 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				MF1018 /* MenuFold.entitlements */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		MF3008 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				MF1000 /* MenuFold.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		MF4001 /* MenuFold */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = MF5001 /* Build configuration list for PBXNativeTarget "MenuFold" */;
+			buildPhases = (
+				MF2000 /* Sources */,
+				MF2001 /* Frameworks */,
+				MF2002 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MenuFold;
+			productName = MenuFold;
+			productReference = MF1000 /* MenuFold.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		MF0000 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					MF4001 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = MF5000 /* Build configuration list for PBXProject "MenuFold" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				"zh-Hans",
+			);
+			mainGroup = MF3000;
+			productRefGroup = MF3008 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				MF4001 /* MenuFold */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		MF2002 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				MF0014 /* Assets.xcassets in Resources */,
+				MF0015 /* Localizable.strings in Resources */,
+				MF0016 /* AppIcon.icns in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		MF2000 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				MF0001 /* AppDelegate.swift in Sources */,
+				MF0002 /* StatusBarController.swift in Sources */,
+				MF0003 /* HotKeyManager.swift in Sources */,
+				MF0004 /* LaunchAtLoginManager.swift in Sources */,
+				MF0005 /* Preferences.swift in Sources */,
+				MF0006 /* AppearanceTypes.swift in Sources */,
+				MF0007 /* PreferencesWindowController.swift in Sources */,
+				MF0008 /* PreferencesView.swift in Sources */,
+				MF0009 /* GeneralSettingsView.swift in Sources */,
+				MF0010 /* AppearanceSettingsView.swift in Sources */,
+				MF0011 /* GuideView.swift in Sources */,
+				MF0012 /* AboutView.swift in Sources */,
+				MF0013 /* OnboardingWindowController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		MF1015 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				MF1019 /* zh-Hans */,
+				MF1020 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		MF6001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDEFINED_VARIABLES = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		MF6002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDEFINED_VARIABLES = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = "wholemodule";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		MF6003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MenuFold/Support/MenuFold.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = MenuFold/App/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.a916791360.MenuFold;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		MF6004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MenuFold/Support/MenuFold.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = MenuFold/App/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.a916791360.MenuFold;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		MF5000 /* Build configuration list for PBXProject "MenuFold" */;
+		MF5000 /* Build configuration list for PBXProject "MenuFold" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				MF6001 /* Debug */,
+				MF6002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		MF5001 /* Build configuration list for PBXNativeTarget "MenuFold" */;
+		MF5001 /* Build configuration list for PBXNativeTarget "MenuFold" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				MF6003 /* Debug */,
+				MF6004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = MF0000 /* Project object */;
+}
+"""
+
+try pbxproj.write(toFile: "MenuFold.xcodeproj/project.pbxproj", atomically: true, encoding: .utf8)
+print("project.pbxproj generated successfully!")

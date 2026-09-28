@@ -1,0 +1,80 @@
+/* Menu items */
+"Expand Menu Bar" = "展开菜单栏";
+"Collapse Menu Bar" = "折叠菜单栏";
+"Auto Collapse" = "自动折叠";
+"Separator Style" = "分隔符样式";
+"Show Separator Line" = "显示分隔线";
+"Hide Separator Line" = "隐藏分隔线";
+"How to Use (⌘ + Drag)..." = "使用教程 (⌘ + 拖拽)...";
+"Preferences..." = "偏好设置...";
+"Quit MenuFold" = "退出 MenuFold";
+"MenuFold: Click to toggle, Option-click to toggle separator" = "MenuFold: 点击折叠/展开，按住 Option 点击切换分隔线显示";
+"MenuFold Separator: Cmd-drag items to the left to fold" = "MenuFold 分隔线: 按住 ⌘ 拖拽图标至此线左侧以折叠";
+
+/* Preferences & Settings */
+"MenuFold Preferences" = "MenuFold 偏好设置";
+"General" = "通用";
+"Appearance" = "外观";
+"Guide" = "使用教程";
+"About" = "关于";
+
+/* Startup & Behavior */
+"Startup" = "开机启动";
+"Launch at Login" = "开机自动启动";
+"Automatically start MenuFold when your Mac starts" = "登录 macOS 系统时自动启动 MenuFold";
+"Behavior" = "行为设置";
+"Auto Collapse Timer" = "自动折叠时间";
+"After expanding, MenuFold will automatically fold after the specified time." = "点击展开后，将在指定时间后自动折叠收起。";
+"Shortcuts" = "快捷键";
+"Enable Global Shortcut (⌘ + ⌥ + B)" = "启用全局快捷键 (⌘ + ⌥ + B)";
+"Toggle menu bar fold/expand from anywhere with keyboard" = "在任何界面使用快捷键快速折叠/展开菜单栏";
+"Advanced" = "高级选项";
+"Enable Always-Hidden Section" = "启用永久隐藏区";
+"Adds a second separator for icons you never want to see" = "添加第二道分隔线，放置在此线左侧的图标即使展开也不会显示";
+
+/* Appearance */
+"Toggle Arrow" = "折叠箭头";
+"Arrow Icon Style" = "箭头图标样式";
+"Preview:" = "效果预览:";
+"Expanded" = "展开状态";
+"Folded" = "折叠状态";
+"Separator Boundary" = "分隔符设置";
+"Hides the separator bar for an ultra-clean look (Option-click arrow to toggle)" = "隐藏分隔线以获得极致清爽的视觉效果（按住 Option 单击箭头亦可切换）";
+
+/* Styles */
+"Classic Chevron" = "经典箭头 (< / >)";
+"Filled Triangle" = "实心三角 (◀ / ▶)";
+"Circle Chevron" = "圆形徽章箭头";
+"Subtle Line (|)" = "细分隔线 (|)";
+"Subtle Dot (•)" = "极简圆点 (•)";
+"Completely Hidden" = "完全隐藏分隔符";
+
+/* Duration */
+"Never (Manual Only)" = "从不 (仅手动点击)";
+"5 Seconds" = "5 秒";
+"10 Seconds" = "10 秒";
+"15 Seconds" = "15 秒";
+"30 Seconds" = "30 秒";
+
+/* Guide */
+"Welcome to MenuFold" = "欢迎使用 MenuFold";
+"Solve MacBook notch occlusion & organize your menu bar" = "优雅解决 MacBook 刘海遮挡痛点，让菜单栏重归井井有条";
+"Layout in Menu Bar" = "菜单栏区域划分示例";
+"Folded / Hidden Area" = "折叠隐藏区 (左侧)";
+"Separator" = "分隔线";
+"Always Visible Area" = "常驻显示区 (右侧)";
+"Hold ⌘ (Command) to Drag Icons" = "第一步：按住 ⌘ 拖拽图标";
+"Hold the ⌘ (Command) key on your keyboard and drag any menu bar icon with your mouse. Drag icons you want to collapse to the LEFT of the separator." = "按住键盘上的 ⌘ (Command) 键不放，鼠标拖动任意菜单栏图标。拖到分隔符左侧即可收纳进折叠区。";
+"Click the Arrow to Fold / Unfold" = "第二步：点击箭头一键折叠";
+"Click the arrow (< / >) on the menu bar. All icons to the left will instantly fold and hide, freeing up menu bar space and avoiding notch occlusion!" = "轻点菜单栏上的折叠箭头 (< / >)，左侧所有图标瞬间折叠隐入箭头，释放空间不再被刘海遮挡！";
+"Pro Tips: Shortcuts & Clean Mode" = "进阶技巧：快捷键与极简模式";
+"• Press ⌘ + ⌥ + B anywhere to toggle fold state.\n• Option-click the arrow to hide/show the separator line.\n• Enable 'Auto Collapse' in Preferences to fold automatically." = "• 任意界面按下 ⌘ + ⌥ + B 快速切换展开/折叠。\n• 按住 Option 键点击箭头可直接隐藏/显示分隔线。\n• 在偏好设置开启“自动折叠”，展开使用完毕后自动隐退。";
+"Got it! Start using MenuFold" = "知道了，开始使用 MenuFold";
+
+/* About */
+"Version %@" = "版本 %@";
+"Ultra-light macOS Menu Bar Organizer for Notch Displays" = "专为现代 MacBook 刘海屏打造的超轻量开源菜单栏折叠工具";
+"Designed & Developed by" = "设计与开发";
+"GitHub Repository" = "GitHub 开源仓库";
+"Releases & Updates" = "发布页与版本更新";
+"Open source under the MIT License" = "采用 MIT 开源许可证发布";
