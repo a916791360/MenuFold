@@ -23,11 +23,11 @@ public enum ArrowStyle: String, CaseIterable, Identifiable, Codable {
         let symbolName: String
         switch self {
         case .chevron:
-            symbolName = collapsed ? "chevron.right" : "chevron.left"
+            symbolName = collapsed ? "chevron.left" : "chevron.right"
         case .triangle:
-            symbolName = collapsed ? "arrowtriangle.right.fill" : "arrowtriangle.left.fill"
+            symbolName = collapsed ? "arrowtriangle.left.fill" : "arrowtriangle.right.fill"
         case .circle:
-            symbolName = collapsed ? "chevron.right.circle.fill" : "chevron.left.circle.fill"
+            symbolName = collapsed ? "chevron.left.circle.fill" : "chevron.right.circle.fill"
         }
         
         let config = NSImage.SymbolConfiguration(pointSize: 13, weight: .semibold)
