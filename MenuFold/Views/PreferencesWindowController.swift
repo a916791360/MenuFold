@@ -17,6 +17,7 @@ public class PreferencesWindowController: NSObject, NSWindowDelegate {
         let newWindow = NSWindow(contentViewController: hostingController)
         newWindow.title = NSLocalizedString("MenuFold Preferences", comment: "Pref window title")
         newWindow.styleMask = [.titled, .closable, .miniaturizable]
+        newWindow.titlebarSeparatorStyle = .none
         newWindow.isReleasedWhenClosed = false
         newWindow.center()
         newWindow.delegate = self

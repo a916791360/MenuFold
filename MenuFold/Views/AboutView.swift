@@ -3,13 +3,19 @@ import SwiftUI
 public struct AboutView: View {
     public init() {}
     
+    private var versionString: String {
+        let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0.2"
+        let build = Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "2"
+        return String(format: NSLocalizedString("Version %@", comment: "Version"), "\(version) (Build \(build))")
+    }
+    
     public var body: some View {
-        VStack(spacing: 20) {
+        VStack(spacing: 22) {
             Spacer()
             
             Image(nsImage: NSImage(named: "AppIcon") ?? NSImage())
                 .resizable()
-                .frame(width: 80, height: 80)
+                .frame(width: 84, height: 84)
                 .clipShape(RoundedRectangle(cornerRadius: 18))
                 .shadow(color: Color.black.opacity(0.15), radius: 8, x: 0, y: 4)
             
@@ -18,7 +24,7 @@ public struct AboutView: View {
                     .font(.title)
                     .fontWeight(.bold)
                 
-                Text(String(format: NSLocalizedString("Version %@", comment: "Version"), "1.0.0 (Build 1)"))
+                Text(versionString)
                     .font(.subheadline)
                     .foregroundColor(.secondary)
                 
@@ -27,19 +33,6 @@ public struct AboutView: View {
                     .foregroundColor(.secondary)
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, 40)
-            }
-            
-            Divider()
-                .padding(.horizontal, 40)
-            
-            VStack(spacing: 8) {
-                Text(NSLocalizedString("Designed & Developed by", comment: "Author prefix"))
-                    .font(.caption)
-                    .foregroundColor(.secondary)
-                
-                Text("a916791360")
-                    .font(.body)
-                    .fontWeight(.medium)
             }
             
             HStack(spacing: 16) {
