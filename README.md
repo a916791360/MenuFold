@@ -75,7 +75,13 @@
 1. 前往 [GitHub Releases 最新发布页](https://github.com/a916791360/MenuFold/releases/latest)。
 2. 下载 `MenuFold.dmg` 或 `MenuFold.zip`。
 3. 双击打开 `MenuFold.dmg`，将 **MenuFold.app** 拖动到 **Applications**（应用程序）文件夹即可。
-4. 首次打开如遇到系统安全提示，前往「系统设置」→「隐私与安全性」点击「仍要打开」即可。
+4. **首次打开安全提示说明**：MenuFold 为免费开源软件，未购买苹果付费开发者证书。首次通过浏览器下载打开时，macOS 会提示“无法验证开发者”，按以下操作即可：
+   - **方式 A（最推荐）**：打开「系统设置」→「隐私与安全性」，滑到底部安全性区域，点击「**仍要打开**」，输入锁屏密码即可；
+   - **方式 B（右键打开）**：按住键盘 `Control` 键不放，鼠标右键点击 `MenuFold.app`，在弹出菜单中点击「打开」，在弹出的确认窗口中点击「打开」；
+   - **方式 C（终端一键放行）**：
+     ```bash
+     xattr -cr /Applications/MenuFold.app
+     ```
 
 ### 方式二：从源码编译
 

@@ -56,6 +56,13 @@ Zero dangerous accessibility permissions needed, pure Swift + AppKit, no memory 
 1. Go to the [GitHub Releases Page](https://github.com/a916791360/MenuFold/releases/latest).
 2. Download `MenuFold.dmg` or `MenuFold.zip`.
 3. Open `MenuFold.dmg` and drag **MenuFold.app** to your **Applications** folder.
+4. **Gatekeeper Notice**: As a free and open-source project without Apple's paid Developer Certificate, macOS may prompt "Cannot verify developer" on first launch:
+   - **Option A (System Settings)**: Open `System Settings` → `Privacy & Security`, scroll down to Security, and click **"Open Anyway"**.
+   - **Option B (Right-Click Open)**: Hold `Control` and right-click `MenuFold.app`, select "Open", and click "Open" in the dialog.
+   - **Option C (Terminal)**:
+     ```bash
+     xattr -cr /Applications/MenuFold.app
+     ```
 
 ### Option 2: Build from Source
 
