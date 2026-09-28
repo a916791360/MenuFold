@@ -46,4 +46,8 @@ ls -lh release/
 echo "==> Checksums:"
 shasum -a 256 release/*
 
+echo "==> 8. Cleaning up build artifacts to prevent duplicate Launchpad icons..."
+/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -u "$APP_PATH" 2>/dev/null || true
+rm -rf build
+
 echo "==> Build complete!"
