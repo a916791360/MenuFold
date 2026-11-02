@@ -102,7 +102,9 @@
 "Menu Bar" = "Menu Bar";
 "Apps" = "Apps";
 "No matching apps found" = "No matching apps found";
-"Click to bring app to front" = "Click to bring app to front, right-click for actions";
-"Bring to Front" = "Bring to Front";
+"Click to bring app to front" = "Click icon to open app, right-click for options";
+"Click icon to open app, right-click for options" = "Click icon to open app, right-click for options";
+"Bring to Front" = "Open Application";
+"Open Application" = "Open Application";
 "Show in Finder" = "Show in Finder";
 "Quit" = "Quit";

@@ -102,7 +102,9 @@
 "Menu Bar" = "常驻小工具";
 "Apps" = "常规应用";
 "No matching apps found" = "未找到匹配的应用";
-"Click to bring app to front" = "点击唤醒应用窗口，右键呼出操作";
-"Bring to Front" = "唤醒至前台";
+"Click to bring app to front" = "点击图标打开对应应用，右键呼出操作";
+"Click icon to open app, right-click for options" = "点击图标打开对应应用，右键呼出操作";
+"Bring to Front" = "打开应用";
+"Open Application" = "打开应用";
 "Show in Finder" = "在访达中显示";
 "Quit" = "退出应用";

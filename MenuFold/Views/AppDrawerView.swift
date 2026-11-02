@@ -24,7 +24,7 @@ public struct AppDrawerView: View {
     @ObservedObject var drawerManager = AppDrawerManager.shared
     @State private var searchText: String = ""
     @State private var selectedFilter: DrawerFilter = .all
-    @State private var hoveredItemId: pid_t? = nil
+    @State private var hoveredItemId: String? = nil
     
     var onDismiss: (() -> Void)?
     
@@ -159,7 +159,7 @@ public struct AppDrawerView: View {
             
             // Footer Info
             HStack {
-                Text(NSLocalizedString("Click to bring app to front", comment: "Drawer Footer tip"))
+                Text(NSLocalizedString("Click icon to open app, right-click for options", comment: "Drawer Footer tip"))
                     .font(.system(size: 10))
                     .foregroundColor(.secondary)
                 
@@ -188,7 +188,9 @@ public struct AppDrawerView: View {
     private func appItemCell(item: DrawerAppItem) -> some View {
         Button(action: {
             drawerManager.activate(item: item)
-            onDismiss?()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
+                onDismiss?()
+            }
         }) {
             VStack(spacing: 5) {
                 ZStack(alignment: .bottomTrailing) {
@@ -227,9 +229,11 @@ public struct AppDrawerView: View {
             hoveredItemId = isHovered ? item.id : nil
         }
         .contextMenu {
-            Button(NSLocalizedString("Bring to Front", comment: "Activate")) {
+            Button(NSLocalizedString("Open Application", comment: "Activate")) {
                 drawerManager.activate(item: item)
-                onDismiss?()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
+                    onDismiss?()
+                }
             }
             
             Button(NSLocalizedString("Show in Finder", comment: "Finder")) {
