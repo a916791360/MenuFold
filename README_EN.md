@@ -5,7 +5,8 @@
 </p>
 
 <p align="center">
-  <strong>An ultra-light, open-source macOS menu bar organizer designed for MacBook notch screens</strong>
+  <strong>An ultra-light, open-source macOS menu bar folding & organizer for MacBook notch displays</strong><br>
+  <sub>⌘ Drag-to-Fold · App Drawer Bubble · Reveal Hidden Notch Apps · 100% Zero Permissions</sub>
 </p>
 
 <p align="center">
@@ -22,10 +23,9 @@
 
 Modern MacBooks feature a camera notch in the top center of the display. When numerous menu bar items accumulate (messaging apps, cloud drives, system monitors, VPNs), icons on the left are frequently **occluded by the notch** or pushed completely off-screen, making them unreachable.
 
-**MenuFold** provides a minimalist, native fold-away solution:
-1. After launching, a folding arrow `<` and a separator `|` appear in your menu bar.
-2. Hold **`⌘ (Command)`** on your keyboard and drag any icon you want to hide to the left of the separator.
-3. Click the arrow: all icons to its left instantly tuck away into the arrow. Click again anytime to expand them!
+**MenuFold** provides an elegant dual solution to end notch occlusion forever:
+1. **⌘ Drag-to-Fold Organization**: Hold **`⌘ (Command)`** on your keyboard to drag icons to the left of the separator, then click the arrow to fold them away instantly, freeing up menu bar space.
+2. **App Drawer Bubble Popover (New in v1.1.0)**: When running many menu bar apps that exceed the physical space near the notch, simply **hover or click the separator** to reveal a quick-access bubble drawer. View, search, and launch any accessory tools or standard apps hidden behind the notch!
 
 Zero dangerous accessibility permissions needed, pure Swift + AppKit, no memory leaks, ultra-lightweight (~30MB memory, 0% idle CPU).
 
