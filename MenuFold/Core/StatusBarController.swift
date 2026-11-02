@@ -13,7 +13,6 @@ public class StatusBarController: NSObject {
     private var toggleHoverDetector: StatusBarHoverDetector?
     private var separatorHoverDetector: StatusBarHoverDetector?
     private var hoverOpenTimer: Timer?
-    private var hoverCloseTimer: Timer?
     
     // Auto collapse timer
     private var autoCollapseTimer: Timer?
@@ -172,9 +171,6 @@ public class StatusBarController: NSObject {
         }
         
         if isHovered {
-            hoverCloseTimer?.invalidate()
-            hoverCloseTimer = nil
-            
             guard !AppDrawerPopoverController.shared.isShown else { return }
             
             hoverOpenTimer?.invalidate()
@@ -187,34 +183,32 @@ public class StatusBarController: NSObject {
                         let winPoint = win.convertPoint(fromScreen: mouseLoc)
                         let btnPoint = btn.convert(winPoint, from: nil)
                         if btn.bounds.contains(btnPoint) {
-                            AppDrawerPopoverController.shared.show(relativeTo: btn.bounds, of: btn)
+                            AppDrawerPopoverController.shared.show(relativeTo: btn.bounds, of: btn, openedByHover: true)
                         }
                     }
                 }
             }
         } else {
+            // Mouse exited button: cancel pending open timer if user was just passing through quickly
             hoverOpenTimer?.invalidate()
             hoverOpenTimer = nil
-            
-            if AppDrawerPopoverController.shared.isShown {
-                hoverCloseTimer?.invalidate()
-                hoverCloseTimer = Timer.scheduledTimer(withTimeInterval: 0.45, repeats: false) { _ in
-                    DispatchQueue.main.async {
-                        // Check if mouse is currently in the popover or button
-                        let mouseLoc = NSEvent.mouseLocation
-                        if let btnWin = button.window {
-                            let winPoint = btnWin.convertPoint(fromScreen: mouseLoc)
-                            let btnPoint = button.convert(winPoint, from: nil)
-                            if !button.bounds.contains(btnPoint) {
-                                AppDrawerPopoverController.shared.close()
-                            }
-                        } else {
-                            AppDrawerPopoverController.shared.close()
-                        }
-                    }
+            // Popover dismissal is smoothly handled by AppDrawerPopoverController's checkHoverState
+        }
+    }
+    
+    /// Checks if mouse cursor is currently within any of MenuFold's status bar buttons (with margin)
+    public func isMouseInStatusBarButtons() -> Bool {
+        let mouseLoc = NSEvent.mouseLocation
+        let buttons = [toggleItem.button, separatorItem.button, alwaysHiddenItem?.button].compactMap { $0 }
+        for btn in buttons {
+            if let win = btn.window {
+                let rect = win.convertToScreen(btn.convert(btn.bounds, to: nil))
+                if rect.insetBy(dx: -8, dy: -8).contains(mouseLoc) {
+                    return true
                 }
             }
         }
+        return false
     }
     
     @objc private func toggleButtonPressed(_ sender: NSStatusBarButton) {
