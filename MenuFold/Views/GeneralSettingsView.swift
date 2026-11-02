@@ -21,6 +21,16 @@ public struct GeneralSettingsView: View {
                             .foregroundColor(.secondary)
                     }
                 }
+                
+                Toggle(isOn: $prefs.isAutoCheckUpdateEnabled) {
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text(NSLocalizedString("Automatically Check for Updates", comment: "Auto update title"))
+                            .font(.body)
+                        Text(NSLocalizedString("Check for new versions periodically at startup", comment: "Auto update sub"))
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                    }
+                }
             } header: {
                 Text(NSLocalizedString("Startup", comment: "Section header"))
             }

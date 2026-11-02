@@ -18,6 +18,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 OnboardingWindowController.shared.showWindow()
             }
         }
+        
+        // Background check for updates if enabled (after 5 seconds)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+            UpdateChecker.shared.checkAutomaticallyIfNeeded()
+        }
     }
     
     func applicationWillTerminate(_ aNotification: Notification) {

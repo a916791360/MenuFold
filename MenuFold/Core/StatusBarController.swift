@@ -176,7 +176,7 @@ public class StatusBarController: NSObject {
             hoverOpenTimer?.invalidate()
             hoverOpenTimer = Timer.scheduledTimer(withTimeInterval: delay.rawValue, repeats: false) { [weak self, weak button] _ in
                 DispatchQueue.main.async {
-                    guard let btn = button, let self = self else { return }
+                    guard let btn = button else { return }
                     // Ensure mouse is still within the button before popping up
                     let mouseLoc = NSEvent.mouseLocation
                     if let win = btn.window {
@@ -372,6 +372,11 @@ public class StatusBarController: NSObject {
         prefItem.target = self
         menu.addItem(prefItem)
         
+        // Check for Updates
+        let updateItem = NSMenuItem(title: NSLocalizedString("Check for Updates...", comment: "Check for Updates"), action: #selector(checkForUpdates), keyEquivalent: "u")
+        updateItem.target = self
+        menu.addItem(updateItem)
+        
         menu.addItem(NSMenuItem.separator())
         
         // Quit
@@ -417,6 +422,10 @@ public class StatusBarController: NSObject {
     
     @objc private func openPreferences() {
         PreferencesWindowController.shared.showWindow()
+    }
+    
+    @objc private func checkForUpdates() {
+        UpdateChecker.shared.checkForUpdates(isUserInitiated: true)
     }
     
     @objc private func quitApp() {

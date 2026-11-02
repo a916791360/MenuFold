@@ -24,6 +24,8 @@ public class Preferences: ObservableObject {
         static let isHoverDrawerEnabled = "menufold_is_hover_drawer_enabled"
         static let hoverDrawerDelay = "menufold_hover_drawer_delay"
         static let drawerTriggerTarget = "menufold_drawer_trigger_target"
+        static let isAutoCheckUpdateEnabled = "menufold_is_auto_check_update_enabled"
+        static let lastUpdateCheckTime = "menufold_last_update_check_time"
     }
     
     @Published public var isCollapsed: Bool {
@@ -101,6 +103,18 @@ public class Preferences: ObservableObject {
         }
     }
     
+    @Published public var isAutoCheckUpdateEnabled: Bool {
+        didSet {
+            defaults.set(isAutoCheckUpdateEnabled, forKey: Keys.isAutoCheckUpdateEnabled)
+            notifyChanged()
+        }
+    }
+    
+    public var lastUpdateCheckTime: Date? {
+        get { defaults.object(forKey: Keys.lastUpdateCheckTime) as? Date }
+        set { defaults.set(newValue, forKey: Keys.lastUpdateCheckTime) }
+    }
+    
     private init() {
         self.isCollapsed = defaults.bool(forKey: Keys.isCollapsed)
         
@@ -124,6 +138,8 @@ public class Preferences: ObservableObject {
         
         let triggerTargetRaw = defaults.string(forKey: Keys.drawerTriggerTarget) ?? DrawerTriggerTarget.both.rawValue
         self.drawerTriggerTarget = DrawerTriggerTarget(rawValue: triggerTargetRaw) ?? .both
+        
+        self.isAutoCheckUpdateEnabled = defaults.object(forKey: Keys.isAutoCheckUpdateEnabled) as? Bool ?? true
     }
     
     private func notifyChanged() {

@@ -30,6 +30,7 @@ let pbxproj = """
 		MF0018 /* StatusBarHoverDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = MF1022 /* StatusBarHoverDetector.swift */; };
 		MF0019 /* AppDrawerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = MF1023 /* AppDrawerView.swift */; };
 		MF0020 /* AppDrawerPopoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = MF1024 /* AppDrawerPopoverController.swift */; };
+		MF0021 /* UpdateChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = MF1025 /* UpdateChecker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@ let pbxproj = """
 		MF1022 /* StatusBarHoverDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarHoverDetector.swift; sourceTree = "<group>"; };
 		MF1023 /* AppDrawerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDrawerView.swift; sourceTree = "<group>"; };
 		MF1024 /* AppDrawerPopoverController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDrawerPopoverController.swift; sourceTree = "<group>"; };
+		MF1025 /* UpdateChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateChecker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@ let pbxproj = """
 				MF1004 /* LaunchAtLoginManager.swift */,
 				MF1021 /* AppDrawerManager.swift */,
 				MF1022 /* StatusBarHoverDetector.swift */,
+				MF1025 /* UpdateChecker.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@ let pbxproj = """
 				MF0018 /* StatusBarHoverDetector.swift in Sources */,
 				MF0019 /* AppDrawerView.swift in Sources */,
 				MF0020 /* AppDrawerPopoverController.swift in Sources */,
+				MF0021 /* UpdateChecker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

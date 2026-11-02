@@ -108,3 +108,21 @@
 "Open Application" = "Open Application";
 "Show in Finder" = "Show in Finder";
 "Quit" = "Quit";
+
+/* Updates */
+"Check for Updates..." = "Check for Updates...";
+"Check for Updates" = "Check for Updates";
+"Checking for updates..." = "Checking for updates...";
+"You're Up to Date" = "You're Up to Date";
+"MenuFold v%@ is currently the newest version." = "MenuFold v%@ is currently the newest version.";
+"New Version Available" = "New Version Available";
+"A new version (%@) of MenuFold is available (current: v%@).\n\nRelease notes:\n%@" = "A new version (%@) of MenuFold is available (current: v%@).\n\nRelease notes:\n%@";
+"Download Update" = "Download Update";
+"Later" = "Later";
+"Update Check Failed" = "Update Check Failed";
+"Unable to connect to GitHub to check for updates. Please check your network connection." = "Unable to connect to GitHub to check for updates. Please check your network connection.";
+"Unable to connect to GitHub. Please check your network." = "Unable to connect to GitHub. Please check your network.";
+"Failed to parse release information." = "Failed to parse release information.";
+"Automatically Check for Updates" = "Automatically Check for Updates";
+"Check for new versions periodically at startup" = "Check for new versions periodically at startup";
+"OK" = "OK";

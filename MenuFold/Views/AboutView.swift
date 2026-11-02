@@ -1,6 +1,8 @@
 import SwiftUI
 
 public struct AboutView: View {
+    @ObservedObject var updateChecker = UpdateChecker.shared
+    
     public init() {}
     
     private var versionString: String {
@@ -35,7 +37,7 @@ public struct AboutView: View {
                     .padding(.horizontal, 40)
             }
             
-            HStack(spacing: 16) {
+            HStack(spacing: 14) {
                 Button(action: {
                     if let url = URL(string: "https://github.com/a916791360/MenuFold") {
                         NSWorkspace.shared.open(url)
@@ -49,13 +51,20 @@ public struct AboutView: View {
                 .buttonStyle(.borderedProminent)
                 
                 Button(action: {
-                    if let url = URL(string: "https://github.com/a916791360/MenuFold/releases") {
-                        NSWorkspace.shared.open(url)
-                    }
+                    UpdateChecker.shared.checkForUpdates(isUserInitiated: true)
                 }) {
-                    Text(NSLocalizedString("Releases & Updates", comment: "Releases button"))
+                    HStack(spacing: 6) {
+                        if updateChecker.isChecking {
+                            ProgressView()
+                                .controlSize(.small)
+                        } else {
+                            Image(systemName: "arrow.clockwise")
+                        }
+                        Text(NSLocalizedString("Check for Updates", comment: "Check for Updates"))
+                    }
                 }
                 .buttonStyle(.bordered)
+                .disabled(updateChecker.isChecking)
             }
             
             Text(NSLocalizedString("Open source under the MIT License", comment: "License"))
