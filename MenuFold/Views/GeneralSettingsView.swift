@@ -41,6 +41,36 @@ public struct GeneralSettingsView: View {
             }
             
             Section {
+                Toggle(isOn: $prefs.isHoverDrawerEnabled) {
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text(NSLocalizedString("Enable App Drawer Bubble", comment: "Drawer toggle title"))
+                            .font(.body)
+                        Text(NSLocalizedString("Hover over or click the separator to reveal all running menu bar apps in a bubble drawer", comment: "Drawer toggle sub"))
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                    }
+                }
+                
+                if prefs.isHoverDrawerEnabled {
+                    Picker(selection: $prefs.hoverDrawerDelay, label: Text(NSLocalizedString("Hover Sensitivity", comment: "Hover delay label"))) {
+                        ForEach(HoverDelayOption.allCases) { option in
+                            Text(option.localizedName).tag(option)
+                        }
+                    }
+                    .pickerStyle(MenuPickerStyle())
+                    
+                    Picker(selection: $prefs.drawerTriggerTarget, label: Text(NSLocalizedString("Trigger Area", comment: "Trigger target label"))) {
+                        ForEach(DrawerTriggerTarget.allCases) { target in
+                            Text(target.localizedName).tag(target)
+                        }
+                    }
+                    .pickerStyle(MenuPickerStyle())
+                }
+            } header: {
+                Text(NSLocalizedString("App Drawer (Bubble Panel)", comment: "Section header"))
+            }
+            
+            Section {
                 Toggle(isOn: $prefs.globalHotkeyEnabled) {
                     VStack(alignment: .leading, spacing: 2) {
                         Text(NSLocalizedString("Enable Global Shortcut (⌘ + ⌥ + B)", comment: "Hotkey title"))

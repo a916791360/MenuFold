@@ -23,6 +23,10 @@
 		MF0014 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = MF1014 /* Assets.xcassets */; };
 		MF0015 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = MF1015 /* Localizable.strings */; };
 		MF0016 /* AppIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = MF1016 /* AppIcon.icns */; };
+		MF0017 /* AppDrawerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = MF1021 /* AppDrawerManager.swift */; };
+		MF0018 /* StatusBarHoverDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = MF1022 /* StatusBarHoverDetector.swift */; };
+		MF0019 /* AppDrawerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = MF1023 /* AppDrawerView.swift */; };
+		MF0020 /* AppDrawerPopoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = MF1024 /* AppDrawerPopoverController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +50,10 @@
 		MF1018 /* MenuFold.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MenuFold.entitlements; sourceTree = "<group>"; };
 		MF1019 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		MF1020 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "en.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		MF1021 /* AppDrawerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDrawerManager.swift; sourceTree = "<group>"; };
+		MF1022 /* StatusBarHoverDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarHoverDetector.swift; sourceTree = "<group>"; };
+		MF1023 /* AppDrawerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDrawerView.swift; sourceTree = "<group>"; };
+		MF1024 /* AppDrawerPopoverController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDrawerPopoverController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +103,8 @@
 				MF1002 /* StatusBarController.swift */,
 				MF1003 /* HotKeyManager.swift */,
 				MF1004 /* LaunchAtLoginManager.swift */,
+				MF1021 /* AppDrawerManager.swift */,
+				MF1022 /* StatusBarHoverDetector.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -118,6 +128,8 @@
 				MF1011 /* GuideView.swift */,
 				MF1012 /* AboutView.swift */,
 				MF1013 /* OnboardingWindowController.swift */,
+				MF1023 /* AppDrawerView.swift */,
+				MF1024 /* AppDrawerPopoverController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -232,6 +244,10 @@
 				MF0011 /* GuideView.swift in Sources */,
 				MF0012 /* AboutView.swift in Sources */,
 				MF0013 /* OnboardingWindowController.swift in Sources */,
+				MF0017 /* AppDrawerManager.swift in Sources */,
+				MF0018 /* StatusBarHoverDetector.swift in Sources */,
+				MF0019 /* AppDrawerView.swift in Sources */,
+				MF0020 /* AppDrawerPopoverController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,7 +385,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = MenuFold/App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -377,7 +393,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.a916791360.MenuFold;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -393,7 +409,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = MenuFold/App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -401,7 +417,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.a916791360.MenuFold;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

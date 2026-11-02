@@ -10,6 +10,7 @@
 "Quit MenuFold" = "Quit MenuFold";
 "MenuFold: Click to toggle, Option-click to toggle separator" = "MenuFold: Click to toggle, Option-click to toggle separator";
 "MenuFold Separator: Cmd-drag items to the left to fold" = "MenuFold Separator: Cmd-drag items to the left to fold";
+"Open App Drawer..." = "Open App Drawer...";
 
 /* Preferences & Settings */
 "MenuFold Preferences" = "MenuFold Preferences";
@@ -80,3 +81,28 @@
 "GitHub Repository" = "GitHub Repository";
 "Releases & Updates" = "Releases & Updates";
 "Open source under the MIT License" = "Open source under the MIT License";
+
+/* App Drawer */
+"App Drawer (Bubble Panel)" = "App Drawer (Bubble Panel)";
+"Enable App Drawer Bubble" = "Enable App Drawer Bubble";
+"Hover over or click the separator to reveal all running menu bar apps in a bubble drawer" = "Hover over or click the separator to reveal all running menu bar apps in a bubble drawer";
+"Hover Sensitivity" = "Hover Sensitivity";
+"Trigger Area" = "Trigger Area";
+"Fast (0.15s)" = "Fast (0.15s)";
+"Normal (0.25s)" = "Normal (0.25s)";
+"Slow (0.50s)" = "Slow (0.50s)";
+"Click Only (No Hover)" = "Click Only (No Hover)";
+"Separator Line Only" = "Separator Line Only";
+"Toggle Arrow Only" = "Toggle Arrow Only";
+"Both Separator & Arrow" = "Both Separator & Arrow";
+"Running Menu Bar Apps" = "Running Menu Bar Apps";
+"Refresh App List" = "Refresh App List";
+"Search apps..." = "Search apps...";
+"All" = "All";
+"Menu Bar" = "Menu Bar";
+"Apps" = "Apps";
+"No matching apps found" = "No matching apps found";
+"Click to bring app to front" = "Click to bring app to front, right-click for actions";
+"Bring to Front" = "Bring to Front";
+"Show in Finder" = "Show in Finder";
+"Quit" = "Quit";

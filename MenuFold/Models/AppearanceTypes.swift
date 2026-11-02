@@ -116,3 +116,45 @@ public enum AutoCollapseDuration: Int, CaseIterable, Identifiable {
         }
     }
 }
+
+public enum HoverDelayOption: Double, CaseIterable, Identifiable {
+    case fast = 0.15
+    case normal = 0.25
+    case slow = 0.50
+    case clickOnly = 0.0
+    
+    public var id: Double { rawValue }
+    
+    public var localizedName: String {
+        switch self {
+        case .fast:
+            return NSLocalizedString("Fast (0.15s)", comment: "Fast delay")
+        case .normal:
+            return NSLocalizedString("Normal (0.25s)", comment: "Normal delay")
+        case .slow:
+            return NSLocalizedString("Slow (0.50s)", comment: "Slow delay")
+        case .clickOnly:
+            return NSLocalizedString("Click Only (No Hover)", comment: "Click Only")
+        }
+    }
+}
+
+public enum DrawerTriggerTarget: String, CaseIterable, Identifiable, Codable {
+    case separator = "separator"
+    case arrow = "arrow"
+    case both = "both"
+    
+    public var id: String { rawValue }
+    
+    public var localizedName: String {
+        switch self {
+        case .separator:
+            return NSLocalizedString("Separator Line Only", comment: "Separator only")
+        case .arrow:
+            return NSLocalizedString("Toggle Arrow Only", comment: "Arrow only")
+        case .both:
+            return NSLocalizedString("Both Separator & Arrow", comment: "Both")
+        }
+    }
+}
+

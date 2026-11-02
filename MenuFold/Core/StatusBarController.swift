@@ -9,6 +9,12 @@ public class StatusBarController: NSObject {
     private let separatorItem = NSStatusBar.system.statusItem(withLength: 16)
     private var alwaysHiddenItem: NSStatusItem?
     
+    // Hover Detectors & Timers
+    private var toggleHoverDetector: StatusBarHoverDetector?
+    private var separatorHoverDetector: StatusBarHoverDetector?
+    private var hoverOpenTimer: Timer?
+    private var hoverCloseTimer: Timer?
+    
     // Auto collapse timer
     private var autoCollapseTimer: Timer?
     private var isDebouncing = false
@@ -57,7 +63,13 @@ public class StatusBarController: NSObject {
             button.target = self
             button.action = #selector(toggleButtonPressed(_:))
             button.sendAction(on: [.leftMouseUp, .rightMouseUp])
-            button.toolTip = NSLocalizedString("MenuFold: Click to toggle, Option-click to toggle separator", comment: "Toggle Tooltip")
+            button.toolTip = NSLocalizedString("MenuFold: Click to toggle, Option-click to toggle separator, Hover for drawer", comment: "Toggle Tooltip")
+            
+            let detector = StatusBarHoverDetector(button: button)
+            detector.onHoverChanged = { [weak self] isHovered, btn in
+                self?.handleHover(isHovered: isHovered, button: btn, source: .arrow)
+            }
+            self.toggleHoverDetector = detector
         }
         
         // Configure Separator Item
@@ -66,7 +78,13 @@ public class StatusBarController: NSObject {
             button.target = self
             button.action = #selector(separatorButtonPressed(_:))
             button.sendAction(on: [.leftMouseUp, .rightMouseUp])
-            button.toolTip = NSLocalizedString("MenuFold Separator: Cmd-drag items to the left to fold", comment: "Separator Tooltip")
+            button.toolTip = NSLocalizedString("MenuFold Separator: Cmd-drag items to the left to fold, Click or hover for drawer", comment: "Separator Tooltip")
+            
+            let detector = StatusBarHoverDetector(button: button)
+            detector.onHoverChanged = { [weak self] isHovered, btn in
+                self?.handleHover(isHovered: isHovered, button: btn, source: .separator)
+            }
+            self.separatorHoverDetector = detector
         }
     }
     
@@ -79,6 +97,8 @@ public class StatusBarController: NSObject {
     @objc private func handlePreferencesChanged() {
         updateUI()
         updateAlwaysHiddenItem()
+        toggleHoverDetector?.setupTracking()
+        separatorHoverDetector?.setupTracking()
     }
     
     @objc private func handleToggleRequested() {
@@ -89,6 +109,8 @@ public class StatusBarController: NSObject {
         if Preferences.shared.isCollapsed {
             separatorItem.length = collapseWidth
         }
+        toggleHoverDetector?.setupTracking()
+        separatorHoverDetector?.setupTracking()
     }
     
     public func updateUI() {
@@ -135,6 +157,66 @@ public class StatusBarController: NSObject {
         }
     }
     
+    // MARK: - Hover Drawer Trigger
+    private func handleHover(isHovered: Bool, button: NSStatusBarButton, source: DrawerTriggerTarget) {
+        guard Preferences.shared.isHoverDrawerEnabled else { return }
+        
+        let target = Preferences.shared.drawerTriggerTarget
+        if target != .both && target != source {
+            return
+        }
+        
+        let delay = Preferences.shared.hoverDrawerDelay
+        if delay == .clickOnly {
+            return
+        }
+        
+        if isHovered {
+            hoverCloseTimer?.invalidate()
+            hoverCloseTimer = nil
+            
+            guard !AppDrawerPopoverController.shared.isShown else { return }
+            
+            hoverOpenTimer?.invalidate()
+            hoverOpenTimer = Timer.scheduledTimer(withTimeInterval: delay.rawValue, repeats: false) { [weak self, weak button] _ in
+                DispatchQueue.main.async {
+                    guard let btn = button, let self = self else { return }
+                    // Ensure mouse is still within the button before popping up
+                    let mouseLoc = NSEvent.mouseLocation
+                    if let win = btn.window {
+                        let winPoint = win.convertPoint(fromScreen: mouseLoc)
+                        let btnPoint = btn.convert(winPoint, from: nil)
+                        if btn.bounds.contains(btnPoint) {
+                            AppDrawerPopoverController.shared.show(relativeTo: btn.bounds, of: btn)
+                        }
+                    }
+                }
+            }
+        } else {
+            hoverOpenTimer?.invalidate()
+            hoverOpenTimer = nil
+            
+            if AppDrawerPopoverController.shared.isShown {
+                hoverCloseTimer?.invalidate()
+                hoverCloseTimer = Timer.scheduledTimer(withTimeInterval: 0.45, repeats: false) { _ in
+                    DispatchQueue.main.async {
+                        // Check if mouse is currently in the popover or button
+                        let mouseLoc = NSEvent.mouseLocation
+                        if let btnWin = button.window {
+                            let winPoint = btnWin.convertPoint(fromScreen: mouseLoc)
+                            let btnPoint = button.convert(winPoint, from: nil)
+                            if !button.bounds.contains(btnPoint) {
+                                AppDrawerPopoverController.shared.close()
+                            }
+                        } else {
+                            AppDrawerPopoverController.shared.close()
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
     @objc private func toggleButtonPressed(_ sender: NSStatusBarButton) {
         guard let event = NSApp.currentEvent else { return }
         
@@ -154,6 +236,9 @@ public class StatusBarController: NSObject {
         guard let event = NSApp.currentEvent else { return }
         if event.type == .rightMouseUp {
             showContextMenu(from: sender)
+        } else {
+            // Left click on separator: toggle App Drawer Popover!
+            AppDrawerPopoverController.shared.toggle(relativeTo: sender.bounds, of: sender)
         }
     }
     
@@ -183,6 +268,9 @@ public class StatusBarController: NSObject {
         
         toggleItem.button?.image = Preferences.shared.arrowStyle.icon(forCollapsed: true)
         Preferences.shared.isCollapsed = true
+        
+        toggleHoverDetector?.setupTracking()
+        separatorHoverDetector?.setupTracking()
     }
     
     public func expand() {
@@ -194,6 +282,9 @@ public class StatusBarController: NSObject {
         
         toggleItem.button?.image = Preferences.shared.arrowStyle.icon(forCollapsed: false)
         Preferences.shared.isCollapsed = false
+        
+        toggleHoverDetector?.setupTracking()
+        separatorHoverDetector?.setupTracking()
         
         startAutoCollapseTimerIfNeeded()
     }
@@ -228,6 +319,12 @@ public class StatusBarController: NSObject {
         toggleMenuItem.keyEquivalentModifierMask = [.command, .option]
         toggleMenuItem.target = self
         menu.addItem(toggleMenuItem)
+        
+        // App Drawer trigger
+        let drawerTitle = NSLocalizedString("Open App Drawer...", comment: "Open Drawer")
+        let drawerItem = NSMenuItem(title: drawerTitle, action: #selector(openDrawerFromMenu), keyEquivalent: "d")
+        drawerItem.target = self
+        menu.addItem(drawerItem)
         
         menu.addItem(NSMenuItem.separator())
         
@@ -293,6 +390,14 @@ public class StatusBarController: NSObject {
     
     @objc private func menuToggleClicked() {
         toggle()
+    }
+    
+    @objc private func openDrawerFromMenu() {
+        if let btn = separatorItem.button {
+            AppDrawerPopoverController.shared.toggle(relativeTo: btn.bounds, of: btn)
+        } else if let btn = toggleItem.button {
+            AppDrawerPopoverController.shared.toggle(relativeTo: btn.bounds, of: btn)
+        }
     }
     
     @objc private func autoCollapseSelected(_ sender: NSMenuItem) {

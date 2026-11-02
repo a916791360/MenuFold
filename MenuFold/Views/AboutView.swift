@@ -4,8 +4,8 @@ public struct AboutView: View {
     public init() {}
     
     private var versionString: String {
-        let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0.2"
-        let build = Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "2"
+        let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.1.0"
+        let build = Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "3"
         return String(format: NSLocalizedString("Version %@", comment: "Version"), "\(version) (Build \(build))")
     }
     

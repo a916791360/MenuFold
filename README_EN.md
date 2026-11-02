@@ -35,6 +35,11 @@ Zero dangerous accessibility permissions needed, pure Swift + AppKit, no memory 
 
 - 🎯 **Native ⌘ + Drag Organization**: Uses macOS native menu bar arrangement (`⌘` + drag).
 - 🪄 **One-Click Fold & Unfold**: Instantly collapse excess items behind the arrow to eliminate notch occlusion.
+- 🫧 **App Drawer Bubble Popover (New in v1.1.0)**:
+  - If you have too many status bar items exceeding the physical screen space near the notch, simply **hover over or click the separator** to reveal a quick-access bubble drawer!
+  - Automatically aggregates background utilities (e.g. system monitors, cleaners, accessories) and apps.
+  - Supports instant search, one-click bring-to-front window activation, and Finder/Quit actions.
+  - Fully customizable hover sensitivity (0.15s / 0.25s / 0.50s / click only) and trigger targets.
 - ⚡ **Zero Permissions & Ultra-Light**: No accessibility or screen recording permissions required; safe and non-intrusive.
 - 🚀 **Modern macOS 15+ Architecture**:
   - Uses modern `SMAppService` for launch-at-login (no legacy helper daemons).
@@ -45,6 +50,7 @@ Zero dangerous accessibility permissions needed, pure Swift + AppKit, no memory 
 - 🎨 **Appearance Customization**:
   - Arrow styles: Classic Chevron (`< / >`), Filled Triangle (`◀ / ▶`), Circle Badge.
   - Separators: Subtle Line, Dot, or Completely Hidden (Option-click arrow to toggle).
+  - Configurable App Drawer bubble sensitivity and triggers.
 - 🔒 **Always-Hidden Section**: Optional second separator for items you want to keep permanently hidden.
 
 ---

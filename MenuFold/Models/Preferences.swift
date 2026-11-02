@@ -21,6 +21,9 @@ public class Preferences: ObservableObject {
         static let alwaysHiddenEnabled = "menufold_always_hidden_enabled"
         static let globalHotkeyEnabled = "menufold_global_hotkey_enabled"
         static let hasCompletedOnboarding = "menufold_has_completed_onboarding"
+        static let isHoverDrawerEnabled = "menufold_is_hover_drawer_enabled"
+        static let hoverDrawerDelay = "menufold_hover_drawer_delay"
+        static let drawerTriggerTarget = "menufold_drawer_trigger_target"
     }
     
     @Published public var isCollapsed: Bool {
@@ -77,6 +80,27 @@ public class Preferences: ObservableObject {
         }
     }
     
+    @Published public var isHoverDrawerEnabled: Bool {
+        didSet {
+            defaults.set(isHoverDrawerEnabled, forKey: Keys.isHoverDrawerEnabled)
+            notifyChanged()
+        }
+    }
+    
+    @Published public var hoverDrawerDelay: HoverDelayOption {
+        didSet {
+            defaults.set(hoverDrawerDelay.rawValue, forKey: Keys.hoverDrawerDelay)
+            notifyChanged()
+        }
+    }
+    
+    @Published public var drawerTriggerTarget: DrawerTriggerTarget {
+        didSet {
+            defaults.set(drawerTriggerTarget.rawValue, forKey: Keys.drawerTriggerTarget)
+            notifyChanged()
+        }
+    }
+    
     private init() {
         self.isCollapsed = defaults.bool(forKey: Keys.isCollapsed)
         
@@ -93,6 +117,13 @@ public class Preferences: ObservableObject {
         self.alwaysHiddenEnabled = defaults.bool(forKey: Keys.alwaysHiddenEnabled)
         self.globalHotkeyEnabled = defaults.object(forKey: Keys.globalHotkeyEnabled) as? Bool ?? true
         self.hasCompletedOnboarding = defaults.bool(forKey: Keys.hasCompletedOnboarding)
+        
+        self.isHoverDrawerEnabled = defaults.object(forKey: Keys.isHoverDrawerEnabled) as? Bool ?? true
+        let hoverDelayRaw = defaults.object(forKey: Keys.hoverDrawerDelay) as? Double ?? HoverDelayOption.normal.rawValue
+        self.hoverDrawerDelay = HoverDelayOption(rawValue: hoverDelayRaw) ?? .normal
+        
+        let triggerTargetRaw = defaults.string(forKey: Keys.drawerTriggerTarget) ?? DrawerTriggerTarget.both.rawValue
+        self.drawerTriggerTarget = DrawerTriggerTarget(rawValue: triggerTargetRaw) ?? .both
     }
     
     private func notifyChanged() {
