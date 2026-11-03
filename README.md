@@ -10,11 +10,14 @@
 </p>
 
 <p align="center">
+  <b>简体中文</b> | <a href="README_EN.md">English</a>
+</p>
+
+<p align="center">
   <a href="https://github.com/a916791360/MenuFold/releases/latest"><img src="https://img.shields.io/github/v/release/a916791360/MenuFold?color=blue&label=Release" alt="Latest Release"></a>
   <img src="https://img.shields.io/badge/Platform-macOS%2014.0%2B%20%7C%2015.0%2B%20%7C%2016.0%2B-blueviolet" alt="Platform">
   <img src="https://img.shields.io/badge/Architecture-Universal%20(Apple%20Silicon%20%2B%20Intel)-brightgreen" alt="Architecture">
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License"></a>
-  <a href="README_EN.md"><img src="https://img.shields.io/badge/Language-English-orange" alt="English"></a>
 </p>
 
 ---
@@ -46,6 +49,7 @@
   - 支持全架构 Universal Binary（Apple Silicon M1/M2/M3/M4/M5 + Intel 芯片）。
 - ⌨️ **全局快捷键**：支持全局热键 `⌘ + ⌥ + B`（Command + Option + B），键盘随手一击即可收拢展开。
 - ⏱️ **智能自动折叠**：支持配置展开后 5s / 10s / 15s / 30s 自动折叠，用完即收，清爽无扰。
+- 🔄 **智能自动检查更新**：基于 GitHub Release API 原生检测，支持右键一键检查更新，发现新版本弹窗直达下载。
 - 🎨 **外观与灵敏度定制**：
   - 箭头样式自由切换（经典折叠箭头 `< / >`、实心三角 `◀ / ▶`、极简圆环）。
   - 分隔线可选细线 `|`、圆点 `•` 或完全隐藏（Option + 点击箭头快速隐藏/显示分隔符）。
